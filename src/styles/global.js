@@ -49,6 +49,12 @@ export default createGlobalStyle`
     min-height: 100%
   }
 
+  #root {
+    --white: #f3f3ff;
+    --light-blue: #b4d9ff;
+    --dark-blue: #5452F6;
+  }
+
   body {
     background: linear-gradient(347.71deg, #5452F6 12.93%, rgba(84, 82, 246, 0) 241.45%);
     -webkit-font-smoothing: antialiased !important;
