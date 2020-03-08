@@ -8,6 +8,16 @@ export const Container = styled.div`
 
   height: 100%;
   padding: 2rem 1rem;
+
+  main {
+    display: flex;
+    flex: 1;
+
+    width: 100%;
+  }
+  @media (min-width: 768px) {
+    padding: 3.5rem;
+  }
 `;
 
 export const Header = styled.header`
@@ -19,6 +29,31 @@ export const Header = styled.header`
     height: 2.5rem;
     padding: 0.4rem;
     padding-left: 0;
+  }
+
+  a {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+
+    color: #000;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 14px;
+    background-color: var(--white);
+    border-radius: 5px;
+    max-width: 316px;
+
+    svg {
+      margin-right: 0.64rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    img {
+      padding: 0;
+    }
   }
 `;
 
@@ -40,5 +75,10 @@ export const Search = styled.form`
     margin-left: 0.4rem;
 
     flex: 0;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 316px;
+    margin-left: auto;
   }
 `;

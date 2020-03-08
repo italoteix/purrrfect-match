@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.section`
   flex: 1;
 
   background: var(--white-gradient);
@@ -40,9 +40,28 @@ export const Container = styled.div`
   a:hover {
     color: var(--dark-blue);
   }
+
+  @media (min-width: 768px) {
+    &:last-of-type {
+      flex: 3;
+      margin-left: 1.75rem;
+    }
+
+    & > div:first-of-type {
+      display: flex;
+      align-items: end;
+
+      min-height: 78px;
+    }
+
+    h1 {
+      font-size: 30px;
+      line-height: 24px;
+    }
+  }
 `;
 
-export const CatBlock = styled.div`
+export const CatBlock = styled.article`
   display: flex;
   align-items: center;
 
@@ -61,14 +80,24 @@ export const CatBlock = styled.div`
 
   div {
     display: flex;
-    flex: 1;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
   }
 
+  img + div {
+    justify-content: space-around;
+    flex: 1;
+  }
+
   h3 {
     margin-right: 0.5rem;
+    font-style: italic;
+  }
+
+  h3 + div {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   p {
@@ -79,6 +108,14 @@ export const CatBlock = styled.div`
 
     strong {
       font-weight: bold;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h3 + div {
+      flex: 3;
+      flex-direction: row;
+      justify-content: space-evenly;
     }
   }
 `;

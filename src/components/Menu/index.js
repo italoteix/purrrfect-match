@@ -13,13 +13,13 @@ function Menu(props) {
   return (
     <StyledMenu open={open}>
       <button
-        className={isCatList ? false : 'active'}
+        className={isCatList ? undefined : 'active'}
         onClick={() => handleClick(false)}
       >
         Cat feed
       </button>
       <button
-        className={isCatList ? 'active' : false}
+        className={isCatList ? 'active' : undefined}
         onClick={() => handleClick(true)}
       >
         Cat list
