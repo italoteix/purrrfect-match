@@ -53,6 +53,7 @@ export default createGlobalStyle`
     --white: #f3f3ff;
     --light-blue: #b4d9ff;
     --dark-blue: #5452F6;
+    --white-gradient: linear-gradient(13.09deg, #FAFAFF 12.05%, rgba(255, 255, 255, 0) 1045.02%);
   }
 
   body {

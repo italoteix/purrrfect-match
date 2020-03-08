@@ -5,11 +5,7 @@ export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(
-    13.09deg,
-    #fafaff 12.05%,
-    rgba(255, 255, 255, 0) 1045.02%
-  );
+  background: var(--white-gradient);
   height: 100vh;
   width: 100%;
   text-align: left;
