@@ -17,7 +17,7 @@ export const StyledMenu = styled.nav`
 
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(200%)')};
 
-  a {
+  button {
     font-size: 20px;
     text-transform: uppercase;
     padding: 2rem 0;
@@ -27,9 +27,19 @@ export const StyledMenu = styled.nav`
     text-decoration: none;
     transition: color 0.3s linear;
     text-align: right;
+    border: none;
+    background-color: transparent;
 
     &:hover {
       color: var(--dark-blue);
+    }
+
+    &.active {
+      color: var(--dark-blue);
+
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 `;

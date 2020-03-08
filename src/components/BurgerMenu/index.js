@@ -17,7 +17,12 @@ class BurgerMenu extends React.Component {
     return (
       <div>
         <Burger open={this.state.open} setOpen={() => this.setOpen()} />
-        <Menu open={this.state.open} />
+        <Menu
+          open={this.state.open}
+          setOpen={() => this.setOpen()}
+          isCatList={this.props.isCatList}
+          setBlock={this.props.setIsCatlist}
+        />
       </div>
     );
   }

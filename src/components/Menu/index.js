@@ -1,13 +1,31 @@
 import React from 'react';
 import { StyledMenu } from './styles';
 
-const Menu = ({ open }) => {
+function Menu(props) {
+  const { open, setOpen, isCatList } = props;
+  const setBlock = props.setBlock;
+
+  const handleClick = value => {
+    setOpen(false);
+    setBlock(value);
+  };
+
   return (
     <StyledMenu open={open}>
-      <a href="/">Cat feed</a>
-      <a href="/">Cat list</a>
-      <a href="/">Add new cat</a>
+      <button
+        className={isCatList ? false : 'active'}
+        onClick={() => handleClick(false)}
+      >
+        Cat feed
+      </button>
+      <button
+        className={isCatList ? 'active' : false}
+        onClick={() => handleClick(true)}
+      >
+        Cat list
+      </button>
+      <button href="/">Add new cat</button>
     </StyledMenu>
   );
-};
+}
 export default Menu;
