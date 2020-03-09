@@ -8,7 +8,6 @@ export const Container = styled.section`
   margin-top: 2rem;
   width: 100%;
   overflow-y: scroll;
-  scrollbar-color: #5452f6 #fff;
 
   scrollbar-width: thin;
   scrollbar-color: var(--dark-blue) transparent;
