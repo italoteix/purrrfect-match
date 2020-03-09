@@ -46,7 +46,7 @@ class SimpleList extends React.Component {
       <Container>
         <Header>
           <picture>
-            <source srcset={logotype} media="(min-width: 768px)" />
+            <source srcSet={logotype} media="(min-width: 768px)" />
             <img src={logo} alt="purrrfect match logo" />
           </picture>
           <Search>

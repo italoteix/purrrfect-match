@@ -6,7 +6,8 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  height: 100%;
+  height: 100vh;
+  overflow-y: hidden;
   padding: 2rem 1rem;
 
   main {
@@ -14,6 +15,7 @@ export const Container = styled.div`
     flex: 1;
 
     width: 100%;
+    overflow: auto;
   }
   @media (min-width: 768px) {
     padding: 3.5rem;
@@ -74,7 +76,7 @@ export const Search = styled.form`
     font-size: 15px;
     margin-left: 0.4rem;
 
-    flex: 0;
+    flex: 1;
   }
 
   @media (min-width: 768px) {

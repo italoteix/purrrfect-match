@@ -1,4 +1,3 @@
-// Menu.styled.js
 import styled from 'styled-components';
 
 export const StyledMenu = styled.nav`
@@ -12,8 +11,14 @@ export const StyledMenu = styled.nav`
   padding: 2rem;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   transition: transform 0.3s ease-in-out;
+  max-width: 576px;
+
+  /* Shadow */
+  -webkit-box-shadow: -10px 0px 30px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: -10px 0px 30px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: -10px 0px 30px 0px rgba(0, 0, 0, 0.2);
 
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(200%)')};
 
