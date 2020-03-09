@@ -42,11 +42,20 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     outline: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
   }
 
   html, body, #root {
-    min-height: 100%
+    min-height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  #root {
+    --white: #f3f3ff;
+    --light-blue: #b4d9ff;
+    --dark-blue: #5452F6;
+    --white-gradient: linear-gradient(13.09deg, #FAFAFF 12.05%, rgba(255, 255, 255, 0) 1045.02%);
   }
 
   body {
