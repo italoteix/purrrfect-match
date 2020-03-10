@@ -53,9 +53,11 @@ export const CardInfo = styled.section`
     margin-bottom: 1rem;
   }
 
-  p {
+  p,
+  address {
     font-size: 13px;
     font-weight: 300;
+    font-style: normal;
     line-height: 13px;
 
     strong {

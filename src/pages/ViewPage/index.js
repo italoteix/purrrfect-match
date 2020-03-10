@@ -3,6 +3,8 @@ import React from 'react';
 import { Container, CardInfo, BarGraph } from './styles';
 import logotype from '../../assets/images/logotype.png';
 
+import PieChart from '../../components/PieChart';
+
 class ViewPage extends React.Component {
   constructor(props) {
     super(props);
@@ -27,11 +29,11 @@ class ViewPage extends React.Component {
                 <strong>Age: </strong>
                 {cat.age}
               </p>
-              <p>
+              <address>
                 <strong>Location: </strong>
                 <p>{cat.location}</p>
                 <p>{cat.address}</p>
-              </p>
+              </address>
               <p>
                 <strong>Favorite activity: </strong>
                 {cat.fav}
@@ -51,7 +53,7 @@ class ViewPage extends React.Component {
                 <strong>Personality</strong>
               </h3>
               {cat.personality.map(item => (
-                <div className="personality">
+                <div className="personality" key={item.type}>
                   <p>
                     <strong>{item.type}</strong>
                   </p>
@@ -63,6 +65,7 @@ class ViewPage extends React.Component {
             </article>
             <article>
               <h3>Average Day</h3>
+              <PieChart activities={cat.day} />
             </article>
           </CardInfo>
           <section>
@@ -99,6 +102,24 @@ const catInfoMock = {
     {
       type: 'Energetic',
       value: 0.7
+    }
+  ],
+  day: [
+    {
+      type: 'Meowing',
+      value: 25
+    },
+    {
+      type: 'Hunting',
+      value: 7
+    },
+    {
+      type: 'Sleeping',
+      value: 55
+    },
+    {
+      type: 'Eating',
+      value: 13
     }
   ]
 };
