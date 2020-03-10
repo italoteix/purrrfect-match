@@ -22,7 +22,6 @@ export const Container = styled.div`
     flex-direction: row;
 
     & > div:first-child {
-      /* flex-direction: column; */
       margin: 0;
     }
   }
@@ -31,10 +30,6 @@ export const Container = styled.div`
 export const Label = styled.div`
   display: flex;
   margin: 0.5rem 0;
-
-  /* &:not(:first-child) {
-  } */
-  /* flex-wrap: wrap; */
 
   div {
     width: 15px;

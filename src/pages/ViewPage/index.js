@@ -4,23 +4,26 @@ import { Container, CardInfo, BarGraph } from './styles';
 import logotype from '../../assets/images/logotype.png';
 
 import PieChart from '../../components/PieChart';
+import CardSwiper from '../../components/CardSwiper';
 
 class ViewPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cat: catInfoMock
+      cat: catInfoMock,
+      relatedCats: relatedCatsMock
     };
   }
+
   render() {
-    const { cat } = this.state;
+    const { cat, relatedCats } = this.state;
     return (
       <Container>
         <header>
           <img src={logotype} alt="purrrfect match logo" />
         </header>
         <main>
-          <img src={cat.imgURL} alt="cat avatar" />
+          <img className="profile" src={cat.imgURL} alt="cat avatar" />
           <CardInfo>
             <h1>{cat.name}</h1>
             <article className="info-grid">
@@ -70,6 +73,9 @@ class ViewPage extends React.Component {
           </CardInfo>
           <section>
             <h2>See more cats</h2>
+            {/* {relatedCats.map(cat => ( */}
+            <CardSwiper cards={relatedCats} />
+            {/* ))} */}
           </section>
         </main>
       </Container>
@@ -123,5 +129,50 @@ const catInfoMock = {
     }
   ]
 };
+
+const relatedCatsMock = [
+  {
+    id: '1',
+    name: 'Catzilla',
+    imgURL:
+      'https://squared-potato.pt/wp-content/uploads/2020/02/Pico-Handmade-Cat-Shoulder-Bag-image-12.jpg',
+    url: '/'
+  },
+  {
+    id: '2',
+    name: 'Catzilla',
+    imgURL:
+      'https://squared-potato.pt/wp-content/uploads/2020/02/Pico-Handmade-Cat-Shoulder-Bag-image-12.jpg',
+    url: '/'
+  },
+  {
+    id: '3',
+    name: 'Catzilla',
+    imgURL:
+      'https://squared-potato.pt/wp-content/uploads/2020/02/Pico-Handmade-Cat-Shoulder-Bag-image-12.jpg',
+    url: '/'
+  },
+  {
+    id: '4',
+    name: 'Catzilla',
+    imgURL:
+      'https://squared-potato.pt/wp-content/uploads/2020/02/Pico-Handmade-Cat-Shoulder-Bag-image-12.jpg',
+    url: '/'
+  },
+  {
+    id: '5',
+    name: 'Catzilla',
+    imgURL:
+      'https://squared-potato.pt/wp-content/uploads/2020/02/Pico-Handmade-Cat-Shoulder-Bag-image-12.jpg',
+    url: '/'
+  },
+  {
+    id: '6',
+    name: 'Catzilla',
+    imgURL:
+      'https://squared-potato.pt/wp-content/uploads/2020/02/Pico-Handmade-Cat-Shoulder-Bag-image-12.jpg',
+    url: '/'
+  }
+];
 
 export default ViewPage;

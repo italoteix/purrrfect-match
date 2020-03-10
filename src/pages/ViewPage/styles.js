@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex: 1;
   flex-direction: column;
 
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 3rem;
 
   header {
     display: flex;
@@ -18,11 +18,20 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
 
-    img {
+    img.profile {
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
       width: 100%;
     }
+  }
+
+  h2 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 29px;
+    color: var(--white);
+    margin: 1.5rem 0;
   }
 `;
 
