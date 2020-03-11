@@ -36,7 +36,7 @@ class PieChart extends React.Component {
             </Label>
           ))}
         </div>
-        <div>
+        <div className="pie-container">
           <Pie
             data={{
               labels,
@@ -44,8 +44,11 @@ class PieChart extends React.Component {
                 { data: values, backgroundColor: colors, borderWidth: 0 }
               ]
             }}
-            options={{ legend: { display: false } }}
-            height={114}
+            options={{
+              legend: { display: false },
+              responsive: false,
+              aspectRatio: 1
+            }}
           />
         </div>
       </Container>

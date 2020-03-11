@@ -18,11 +18,24 @@ export const Container = styled.div`
     min-width: 30%;
   }
 
+  .pie-container {
+    flex: 1;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    max-width: 150px;
+  }
+
   @media (min-width: 640px) {
     flex-direction: row;
 
     & > div:first-child {
       margin: 0;
+    }
+
+    .pie-container {
+      align-self: flex-start;
+      margin: 0 1rem;
     }
   }
 `;
