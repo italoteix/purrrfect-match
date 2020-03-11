@@ -17,12 +17,6 @@ export const Container = styled.div`
   main {
     display: flex;
     flex-direction: column;
-
-    img.profile {
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      width: 100%;
-    }
   }
 
   h2 {
@@ -32,6 +26,59 @@ export const Container = styled.div`
     line-height: 29px;
     color: var(--white);
     margin: 1.5rem 0;
+  }
+
+  @media (min-width: 768px) {
+    padding: 2.5rem;
+
+    header {
+      padding: 0;
+      justify-content: flex-start;
+    }
+
+    main {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 2rem 3.5rem;
+  }
+`;
+
+export const ProfilePic = styled.div`
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+
+  /* Keep aspect ratio */
+  padding-top: 100%;
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+
+    /* Center align horizontaly */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media (min-width: 768px) {
+    border-radius: 10px;
+    padding: 0;
+    flex: 2;
+
+    height: 300px;
+  }
+
+  @media (min-width: 1024px) {
+    height: unset;
   }
 `;
 
@@ -85,7 +132,7 @@ export const CardInfo = styled.section`
     }
   }
 
-  .info-grid {
+  .about-cont {
     p {
       margin: 0.6rem 0;
     }
@@ -93,6 +140,70 @@ export const CardInfo = styled.section`
 
   .personality + .personality {
     margin-top: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    border-radius: 5px;
+    flex: 3;
+    margin-left: 1rem;
+    padding: 2rem 3rem 3rem;
+
+    h1 {
+      text-align: left;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: 'a a' 'p d';
+      gap: 1rem 2rem;
+    }
+
+    .about-cont {
+      grid-area: a;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 2fr 4fr 1fr;
+      grid-template-areas: 'h h h' 'a f p' 'l b b' 'v v v';
+      column-gap: 2rem;
+
+      & > * {
+        margin: 0;
+        padding: 0;
+      }
+
+      & h3 {
+        grid-area: h;
+      }
+      & address {
+        grid-area: l;
+      }
+      & > *:nth-child(2) {
+        grid-area: a;
+      }
+      & > *:nth-child(4) {
+        grid-area: f;
+      }
+      & > *:nth-child(5) {
+        grid-area: p;
+      }
+      & > *:nth-child(6) {
+        grid-area: b;
+      }
+      & > *:last-child {
+        grid-area: v;
+      }
+    }
+
+    .personality-container {
+      grid-area: p;
+    }
+
+    .day-container {
+      grid-area: d;
+    }
   }
 `;
 

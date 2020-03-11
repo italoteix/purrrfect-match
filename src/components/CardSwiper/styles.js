@@ -40,4 +40,23 @@ export const Container = styled.article`
       padding-top: 40%;
     }
   }
+
+  @media (min-width: 768px) {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0;
+
+    a {
+      flex: 0;
+      margin: 0 1rem 1rem 0;
+      min-height: 200px;
+      min-width: 200px;
+      padding: 0.5rem;
+
+      &:last-child {
+        border: none;
+        margin-right: 0;
+      }
+    }
+  }
 `;
