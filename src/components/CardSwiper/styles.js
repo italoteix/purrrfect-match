@@ -13,8 +13,10 @@ export const Container = styled.article`
     padding-top: 60%;
     position: relative;
 
+    /* Move last block from screen side */
     &:last-child {
-      margin-right: 1rem;
+      box-sizing: content-box;
+      border-right: 1rem solid transparent;
     }
   }
 
@@ -25,6 +27,11 @@ export const Container = styled.article`
     height: 100%;
     width: 100%;
     object-fit: cover;
+
+    /* To keep border radius when last 'a' has right border */
+    &:last-child {
+      border-radius: 5px;
+    }
   }
 
   @media (min-width: 640px) {
