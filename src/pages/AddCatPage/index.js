@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Container, Form } from './styles';
+import image from '../../assets/images/cats-basket.png';
 import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow.svg';
 import { ReactComponent as PlusIcon } from '../../assets/icons/plus.svg';
 import logotype from '../../assets/images/logotype.png';
@@ -14,39 +16,45 @@ class AddCatPage extends React.Component {
     return (
       <Container>
         <header>
-          <img src={logotype} alt="purrrfect match logo" />
+          <Link to="/">
+            <img src={logotype} alt="purrrfect match logo" />
+          </Link>
         </header>
         <aside>
-          <img src="" alt="" />
+          <img src={image} alt="a basket full of kittens" />
         </aside>
         <main>
           <Form action="">
             <h1>Add new cat</h1>
-            <section>
-              <h3>Cat</h3>
-              <label htmlFor="">Name</label>
-              <input type="text" name="" id="" />
-              <label htmlFor="">Age</label>
-              <input type="text" name="" id="" />
-              <label htmlFor="">Favorite Activity</label>
-              <input type="text" name="" id="" />
-              <label htmlFor="">Pet Peave</label>
-              <input type="text" name="" id="" />
-            </section>
-            <section>
-              <h3>Ownership</h3>
-              <label htmlFor="">Location</label>
-              <input type="text" name="" id="" />
-              <label htmlFor="">Organization</label>
-              <input type="text" name="" id="" />
-              <label htmlFor="">Medical Record</label>
+            <fieldset>
+              <legend>
+                <h3>Cat</h3>
+              </legend>
+              <label htmlFor="name">Name</label>
+              <input type="text" name="name" id="name" />
+              <label htmlFor="age">Age</label>
+              <input type="text" name="age" id="age" />
+              <label htmlFor="fav">Favorite Activity</label>
+              <input type="text" name="fav" id="fav" />
+              <label htmlFor="peave">Pet Peave</label>
+              <input type="text" name="peave" id="peave" />
+            </fieldset>
+            <fieldset>
+              <legend>
+                <h3>Ownership</h3>
+              </legend>
+              <label htmlFor="location">Location</label>
+              <input type="text" name="location" id="location" />
+              <label htmlFor="organization">Organization</label>
+              <input type="text" name="organization" id="organization" />
+              <label htmlFor="record">Medical Record</label>
               <span>
-                <input type="text" name="" id="" />
-                <button>
+                <input type="text" name="record" id="record" />
+                <button type="button">
                   <PlusIcon />
                 </button>
               </span>
-            </section>
+            </fieldset>
             <button type="submit">
               Next <ArrowIcon />
             </button>

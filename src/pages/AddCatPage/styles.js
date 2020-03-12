@@ -13,6 +13,59 @@ export const Container = styled.div`
     margin-bottom: 2rem;
     justify-content: center;
   }
+
+  main {
+    background: var(--white-gradient);
+    border-radius: 5px;
+  }
+
+  aside {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 44px 1fr;
+    grid-template-areas: 'h h' 'a m';
+    row-gap: 1.5rem;
+    column-gap: 1rem;
+
+    padding: 1.5rem 2.5rem;
+
+    header {
+      margin: 0;
+      padding: 0;
+      justify-content: flex-start;
+      grid-area: h;
+    }
+
+    aside {
+      /*
+        Not optimal image resizing. Ideally would be different images with different sizes for each responsive design.
+        The text was flatted on image because the font is paid and not included on design files.
+      */
+
+      grid-area: a;
+      display: block;
+      overflow: hidden;
+      border-radius: 5px;
+
+      img {
+        height: 100%;
+        max-height: 83vh;
+        width: auto;
+        border-radius: 5px;
+      }
+    }
+
+    main {
+      grid-area: m;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 `;
 
 export const Form = styled.form`
@@ -20,9 +73,10 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
 
-  background: var(--white-gradient);
   border-radius: 5px;
   padding: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
 
   h1 {
     font-style: normal;
@@ -57,8 +111,9 @@ export const Form = styled.form`
     height: 29px;
   }
 
-  section {
+  fieldset {
     margin-bottom: 2rem;
+    border: none;
   }
 
   span {
@@ -74,6 +129,10 @@ export const Form = styled.form`
       height: 29px;
       width: 29px;
       margin-top: 0.25rem;
+
+      &:hover line {
+        stroke: var(--light-blue);
+      }
     }
   }
 
@@ -88,14 +147,24 @@ export const Form = styled.form`
       rgba(115, 114, 242, 0) 341.44%
     );
     border: none;
-    border-radius: 5px;
     color: var(--white);
-    height: 44px;
+    min-height: 44px;
+    margin: 0 10.5%;
     max-width: 316px;
     text-transform: uppercase;
 
     svg {
       margin-left: 0.5rem;
+    }
+
+    &:hover {
+      background: var(--dark-blue);
+    }
+  }
+
+  @media (min-width: 768px) {
+    fieldset {
+      margin-bottom: 1rem;
     }
   }
 `;
