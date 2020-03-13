@@ -1,6 +1,6 @@
 # Purrrfect Match
 
-<p align="center"><img src="src/assets/images/logotype.png" alt="logo"/></p>
+<p align="center"><img src="src/assets/images/logotype-blue.png" alt="logo"/></p>
 
 This project was created as a challenge for [GNAR](https://www.gnar.io/).
 It’s a platform that helps people to find a cat for adoption, showing a list of cats and their info.
