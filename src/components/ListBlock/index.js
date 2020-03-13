@@ -15,7 +15,7 @@ function CatFeed({ post }) {
 
 function CatList({ cat }) {
   return (
-    <Link className="cat-list" to="/">
+    <Link className="cat-list" to={`cat/${cat.id}`}>
       <CatBlock>
         <img src={cat.imgURL} alt="cat avatar" />
         <div>

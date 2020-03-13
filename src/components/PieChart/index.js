@@ -7,17 +7,25 @@ class PieChart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      labels: props.activities.map(activity => activity.type),
-      values: props.activities.map(activity => activity.value),
-      datasets: [
-        {
-          data: props.activities.map(activity => activity.value),
-          backgroundColor: ['red', 'blue', 'green'],
-          borderWidth: 0
-        }
-      ]
+      labels: [],
+      values: []
     };
   }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.activities !== prevProps.activities) {
+      this._updateData();
+    }
+  }
+
+  _updateData = () => {
+    const { activities } = this.props;
+
+    this.setState({
+      labels: activities.map(activity => activity.type),
+      values: activities.map(activity => activity.value)
+    });
+  };
 
   render() {
     const { labels, values } = this.state;
