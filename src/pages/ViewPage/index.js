@@ -16,7 +16,17 @@ class ViewPage extends React.Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    this._updateCatData();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.id !== prevProps.match.params.id) {
+      this._updateCatData();
+    }
+  }
+
+  _updateCatData = async () => {
     const { match } = this.props;
     const { id } = match.params;
 
@@ -24,15 +34,13 @@ class ViewPage extends React.Component {
       api.get(`cat/${id}`),
       api.get('cats?_limit=6')
     ]);
-    console.log(cat);
-    console.log(relatedCats);
 
     this.setState({
       ...this.state,
       cat: cat.data,
       relatedCats: relatedCats.data
     });
-  }
+  };
 
   render() {
     const { cat, relatedCats } = this.state;
