@@ -10,7 +10,7 @@ export default function Routes() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={SimpleList} />
-        <Route path="/view" component={ViewPage} />
+        <Route path="/cat/:id" component={ViewPage} />
         <Route path="/cats/submit" component={AddCatPage} />
       </Switch>
     </BrowserRouter>

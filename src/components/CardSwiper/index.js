@@ -7,7 +7,7 @@ function CardSwiper({ cards }) {
   return (
     <Container>
       {cards.map(card => (
-        <Link key={card.id} to={card.url}>
+        <Link key={card.id} to={`/cat/${card.id}`}>
           <img src={card.imgURL} alt={card.name} />
         </Link>
       ))}

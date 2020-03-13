@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Container, CardInfo, BarGraph, ProfilePic } from './styles';
 import logotype from '../../assets/images/logotype.png';
+import api from '../../services/api';
 
 import PieChart from '../../components/PieChart';
 import CardSwiper from '../../components/CardSwiper';
@@ -10,13 +11,32 @@ class ViewPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cat: catInfoMock,
-      relatedCats: relatedCatsMock
+      cat: [],
+      relatedCats: []
     };
+  }
+
+  async componentDidMount() {
+    const { match } = this.props;
+    const { id } = match.params;
+
+    const [cat, relatedCats] = await Promise.all([
+      api.get(`cat/${id}`),
+      api.get('cats?_limit=6')
+    ]);
+    console.log(cat);
+    console.log(relatedCats);
+
+    this.setState({
+      ...this.state,
+      cat: cat.data,
+      relatedCats: relatedCats.data
+    });
   }
 
   render() {
     const { cat, relatedCats } = this.state;
+
     return (
       <Container>
         <header>
@@ -58,20 +78,21 @@ class ViewPage extends React.Component {
                 <h3>
                   <strong>Personality</strong>
                 </h3>
-                {cat.personality.map(item => (
-                  <div className="personality" key={item.type}>
-                    <p>
-                      <strong>{item.type}</strong>
-                    </p>
-                    <BarGraph width={item.value}>
-                      <div></div>
-                    </BarGraph>
-                  </div>
-                ))}
+                {cat.personality &&
+                  cat.personality.map(item => (
+                    <div className="personality" key={item.type}>
+                      <p>
+                        <strong>{item.type}</strong>
+                      </p>
+                      <BarGraph width={item.value}>
+                        <div></div>
+                      </BarGraph>
+                    </div>
+                  ))}
               </article>
               <article className="day-container">
                 <h3>Average Day</h3>
-                <PieChart activities={cat.day} />
+                <PieChart activities={cat.day ? cat.day : []} />
               </article>
             </div>
           </CardInfo>
@@ -84,97 +105,5 @@ class ViewPage extends React.Component {
     );
   }
 }
-
-const catInfoMock = {
-  id: '1',
-  imgURL:
-    'https://squared-potato.pt/wp-content/uploads/2020/02/Pico-Handmade-Cat-Shoulder-Bag-image-12.jpg',
-  name: 'Catzilla',
-  age: '1 year',
-  fav: 'Meowing',
-  peave: 'No one listening',
-  location: 'SPCA Orange County',
-  address: '21632 Newland St, Huntington Beach, CA 92646',
-  bio:
-    'Catzilla is a spunky cat who likes to know what is going on at all times. He is curious, smart, and personable. He loves to meow, hunt, eat, and sleep. Catzilla also does not get along with other cats, but he likes dogs. Catzilla is in need of a loving, lasting home.',
-  medicalURL: '/',
-  personality: [
-    {
-      type: 'Curious',
-      value: 0.9
-    },
-    {
-      type: 'Friendly',
-      value: 0.55
-    },
-    {
-      type: 'Energetic',
-      value: 0.7
-    }
-  ],
-  day: [
-    {
-      type: 'Meowing',
-      value: 25
-    },
-    {
-      type: 'Hunting',
-      value: 7
-    },
-    {
-      type: 'Sleeping',
-      value: 55
-    },
-    {
-      type: 'Eating',
-      value: 13
-    }
-  ]
-};
-
-const relatedCatsMock = [
-  {
-    id: '1',
-    name: 'Catzilla',
-    imgURL:
-      'https://squared-potato.pt/wp-content/uploads/2020/02/Pico-Handmade-Cat-Shoulder-Bag-image-12.jpg',
-    url: '/'
-  },
-  {
-    id: '2',
-    name: 'Catzilla',
-    imgURL:
-      'https://squared-potato.pt/wp-content/uploads/2020/02/Pico-Handmade-Cat-Shoulder-Bag-image-12.jpg',
-    url: '/'
-  },
-  {
-    id: '3',
-    name: 'Catzilla',
-    imgURL:
-      'https://squared-potato.pt/wp-content/uploads/2020/02/Pico-Handmade-Cat-Shoulder-Bag-image-12.jpg',
-    url: '/'
-  },
-  {
-    id: '4',
-    name: 'Catzilla',
-    imgURL:
-      'https://squared-potato.pt/wp-content/uploads/2020/02/Pico-Handmade-Cat-Shoulder-Bag-image-12.jpg',
-    url: '/'
-  },
-  {
-    id: '5',
-    name: 'Catzilla',
-    imgURL:
-      'https://squared-potato.pt/wp-content/uploads/2020/02/Pico-Handmade-Cat-Shoulder-Bag-image-12.jpg',
-    url: '/'
-  },
-  {
-    id: '6',
-    name: 'Catzilla',
-    imgURL:
-      'https://squared-potato.pt/wp-content/uploads/2020/02/Pico-Handmade-Cat-Shoulder-Bag-image-12.jpg',
-    url: '/'
-  }
-];
 
 export default ViewPage;
