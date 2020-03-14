@@ -17,15 +17,6 @@ export const Container = styled.section`
     padding: 1.5rem;
   }
 
-  & > div:not(:first-of-type) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    margin: 0 1.5rem;
-    padding: 1.5rem 0;
-  }
-
   h1,
   h3 {
     text-transform: uppercase;
@@ -51,17 +42,20 @@ export const Container = styled.section`
       margin-left: 1.75rem;
     }
 
-    & > div:first-of-type {
-      display: flex;
-      align-items: end;
-
-      min-height: 78px;
-    }
-
     h1 {
       font-size: 30px;
       line-height: 24px;
     }
+  }
+`;
+
+export const PostBlock = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  svg {
+    margin-left: 0.5rem;
   }
 `;
 
@@ -73,35 +67,9 @@ export const CatBlock = styled.article`
   padding: 0.5rem 0;
   border-bottom: 1px solid #d0dae8;
 
-  img {
-    flex-shrink: 0;
-
-    width: 80px;
-    height: 80px;
-    border-radius: 5px;
-    margin-right: 0.5rem;
-  }
-
-  div {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  img + div {
-    justify-content: space-around;
-    flex: 1;
-  }
-
   h3 {
     margin-right: 0.5rem;
     font-style: italic;
-  }
-
-  h3 + div {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   p {
@@ -114,12 +82,59 @@ export const CatBlock = styled.article`
       font-weight: bold;
     }
   }
+`;
+
+export const CatImg = styled.div`
+  display: flex;
+  flex-shrink: 0;
+
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
+`;
+
+export const Info = styled.div`
+  @media (min-width: 400px) {
+    margin-left: 20%;
+  }
+
+  @media (min-width: 640px) {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+
+    & h3 {
+      flex: 1;
+      margin-left: 1.5rem;
+    }
+  }
+`;
+
+export const Bio = styled.div`
+  flex: 1;
 
   @media (min-width: 1024px) {
-    h3 + div {
-      flex: 3;
-      flex-direction: row;
-      justify-content: space-evenly;
+    flex: 3;
+    display: flex;
+
+    p:first-child {
+      flex: 1;
+      margin-right: 1rem;
+    }
+
+    p + p {
+      flex: 2;
+      margin-right: 1rem;
     }
   }
 `;
