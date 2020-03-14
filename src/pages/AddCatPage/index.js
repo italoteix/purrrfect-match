@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import { Container, Form } from './styles';
 import image from '../../assets/images/cats-basket.png';
 import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow.svg';
 import { ReactComponent as PlusIcon } from '../../assets/icons/plus.svg';
 import logotype from '../../assets/images/logotype.png';
+
+import Header from '../../components/Header';
 
 class AddCatPage extends React.Component {
   constructor(props) {
@@ -15,11 +16,7 @@ class AddCatPage extends React.Component {
   render() {
     return (
       <Container>
-        <header>
-          <Link to="/">
-            <img src={logotype} alt="purrrfect match logo" />
-          </Link>
-        </header>
+        <Header img={logotype} imgAlt="logo" />
         <aside>
           <img src={image} alt="a basket full of kittens" />
         </aside>

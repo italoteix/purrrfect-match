@@ -7,13 +7,6 @@ export const Container = styled.div`
 
   padding: 2rem 1rem 3rem;
 
-  header {
-    display: flex;
-    padding: 0 0.5rem;
-    margin-bottom: 2rem;
-    justify-content: center;
-  }
-
   main {
     background: var(--white-gradient);
     border-radius: 5px;
@@ -34,9 +27,6 @@ export const Container = styled.div`
     padding: 1.5rem 2.5rem;
 
     header {
-      margin: 0;
-      padding: 0;
-      justify-content: flex-start;
       grid-area: h;
     }
 

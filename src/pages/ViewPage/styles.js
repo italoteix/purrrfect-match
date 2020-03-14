@@ -7,13 +7,6 @@ export const Container = styled.div`
 
   padding: 2rem 1rem 3rem;
 
-  header {
-    display: flex;
-    padding: 0 0.5rem;
-    margin-bottom: 2rem;
-    justify-content: center;
-  }
-
   main {
     display: flex;
     flex-direction: column;
@@ -30,11 +23,6 @@ export const Container = styled.div`
 
   @media (min-width: 768px) {
     padding: 2.5rem;
-
-    header {
-      padding: 0;
-      justify-content: flex-start;
-    }
 
     main {
       flex-direction: row;
