@@ -8,7 +8,7 @@ export const Container = styled.header`
     display: flex;
     flex: 1;
     padding: 0 0.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: ${props => props.theme.sizes.lg};
     justify-content: center;
   }
 

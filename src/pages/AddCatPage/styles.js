@@ -8,8 +8,8 @@ export const Container = styled.div`
   padding: 2rem 1rem 3rem;
 
   main {
-    background: var(--white-gradient);
-    border-radius: 5px;
+    background: ${props => props.theme.colors.whiteGradient};
+    border-radius: ${props => props.theme.radius};
   }
 
   aside {
@@ -39,13 +39,13 @@ export const Container = styled.div`
       grid-area: a;
       display: block;
       overflow: hidden;
-      border-radius: 5px;
+      border-radius: ${props => props.theme.radius};
 
       img {
         height: 100%;
         max-height: 83vh;
         width: auto;
-        border-radius: 5px;
+        border-radius: ${props => props.theme.radius};
       }
     }
 
@@ -63,19 +63,13 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
 
-  border-radius: 5px;
+  border-radius: ${props => props.theme.radius};
   padding: 1rem;
   max-width: 400px;
   margin: 0 auto;
 
   h1 {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 29px;
-
     margin: 1rem 0;
-    text-transform: uppercase;
   }
 
   h3 {
@@ -97,7 +91,7 @@ export const Form = styled.form`
   input {
     width: 100%;
     margin: 0.25rem 0 0.5rem;
-    border: 2px solid var(--dark-blue);
+    border: 2px solid ${props => props.theme.colors.darkBlue};
     height: 29px;
   }
 
@@ -114,14 +108,14 @@ export const Form = styled.form`
       justify-content: center;
       align-items: center;
 
-      background-color: var(--dark-blue);
+      background-color: ${props => props.theme.colors.darkBlue};
       border: none;
       height: 29px;
       width: 29px;
       margin-top: 0.25rem;
 
       &:hover line {
-        stroke: var(--light-blue);
+        stroke: ${props => props.theme.colors.lightBlue};
       }
     }
   }
@@ -137,7 +131,7 @@ export const Form = styled.form`
       rgba(115, 114, 242, 0) 341.44%
     );
     border: none;
-    color: var(--white);
+    color: ${props => props.theme.colors.white};
     min-height: 44px;
     margin: 0 10.5%;
     max-width: 316px;
@@ -148,7 +142,7 @@ export const Form = styled.form`
     }
 
     &:hover {
-      background: var(--dark-blue);
+      background: ${props => props.theme.colors.darkBlue};
     }
   }
 

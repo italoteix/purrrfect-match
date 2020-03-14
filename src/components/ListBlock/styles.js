@@ -3,14 +3,14 @@ import styled from 'styled-components';
 export const Container = styled.section`
   flex: 1;
 
-  background: var(--white-gradient);
-  border-radius: 5px;
-  margin-top: 2rem;
+  background: ${props => props.theme.colors.whiteGradient};
+  border-radius: ${props => props.theme.radius};
+  margin-top: ${props => props.theme.sizes.lg};
   width: 100%;
   overflow-y: scroll;
 
   scrollbar-width: thin;
-  scrollbar-color: var(--dark-blue) transparent;
+  scrollbar-color: ${props => props.theme.colors.darkBlue} transparent;
 
   & > div {
     border-bottom: 1px solid #d0dae8;
@@ -22,7 +22,6 @@ export const Container = styled.section`
     text-transform: uppercase;
     font-size: 20px;
     line-height: 20px;
-    font-weight: bold;
   }
 
   a {
@@ -33,7 +32,7 @@ export const Container = styled.section`
   }
 
   a:hover {
-    color: var(--dark-blue);
+    color: ${props => props.theme.colors.darkBlue};
   }
 
   @media (min-width: 768px) {
@@ -69,18 +68,10 @@ export const CatBlock = styled.article`
 
   h3 {
     margin-right: 0.5rem;
-    font-style: italic;
   }
 
   p {
-    font-size: 13px;
-    line-height: 13px;
-    font-weight: 300;
     margin: 0.2rem 0;
-
-    strong {
-      font-weight: bold;
-    }
   }
 `;
 
@@ -90,7 +81,7 @@ export const CatImg = styled.div`
 
   width: 80px;
   height: 80px;
-  border-radius: 5px;
+  border-radius: ${props => props.theme.radius};
   margin-right: 0.5rem;
   overflow: hidden;
 

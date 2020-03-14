@@ -4,7 +4,7 @@ export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: var(--white-gradient);
+  background: ${props => props.theme.colors.whiteGradient};
   height: 100vh;
   width: 100%;
   text-align: left;
@@ -28,7 +28,7 @@ export const StyledMenu = styled.nav`
     padding: 2rem 0;
     font-weight: bold;
     letter-spacing: 0.5rem;
-    color: var(--light-blue);
+    color: ${props => props.theme.colors.lightBlue};
     text-decoration: none;
     transition: color 0.3s linear;
     text-align: right;
@@ -36,11 +36,11 @@ export const StyledMenu = styled.nav`
     background-color: transparent;
 
     &:hover {
-      color: var(--dark-blue);
+      color: ${props => props.theme.colors.darkBlue};
     }
 
     &.active {
-      color: var(--dark-blue);
+      color: ${props => props.theme.colors.darkBlue};
 
       &:hover {
         opacity: 0.7;

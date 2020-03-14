@@ -43,8 +43,8 @@ export const Header = styled.header`
     text-transform: uppercase;
     font-size: 15px;
     line-height: 14px;
-    background-color: var(--white);
-    border-radius: 5px;
+    background-color: ${props => props.theme.colors.white};
+    border-radius: ${props => props.theme.radius};
     max-width: 316px;
 
     svg {
@@ -65,7 +65,7 @@ export const Search = styled.form`
   align-items: center;
 
   background-color: #f3f3ff;
-  border-radius: 5px;
+  border-radius: ${props => props.theme.radius};
   padding: 0.4rem 0.8rem;
   margin-right: 2.5rem;
 

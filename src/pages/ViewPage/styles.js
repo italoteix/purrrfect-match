@@ -13,11 +13,7 @@ export const Container = styled.div`
   }
 
   h2 {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 29px;
-    color: var(--white);
+    color: ${props => props.theme.colors.white};
     margin: 1.5rem 0;
   }
 
@@ -71,7 +67,7 @@ export const ProfilePic = styled.div`
 `;
 
 export const CardInfo = styled.section`
-  background: var(--white-gradient);
+  background: ${props => props.theme.colors.whiteGradient};
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 1.5rem;
@@ -81,32 +77,12 @@ export const CardInfo = styled.section`
   }
 
   h1 {
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 29px;
     text-align: center;
-    text-transform: uppercase;
     margin-bottom: 1.5rem;
   }
 
   h3 {
-    font-style: italic;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 19px;
     margin-bottom: 1rem;
-  }
-
-  p,
-  address {
-    font-size: 13px;
-    font-weight: 300;
-    font-style: normal;
-    line-height: 13px;
-
-    strong {
-      font-weight: bold;
-    }
   }
 
   a {
@@ -116,7 +92,7 @@ export const CardInfo = styled.section`
     text-decoration: underline;
 
     &:hover {
-      color: var(--dark-blue);
+      color: ${props => props.theme.colors.darkBlue};
     }
   }
 
@@ -131,7 +107,7 @@ export const CardInfo = styled.section`
   }
 
   @media (min-width: 768px) {
-    border-radius: 5px;
+    border-radius: ${props => props.theme.radius};
     flex: 3;
     margin-left: 1rem;
     padding: 2rem 3rem 3rem;
@@ -196,7 +172,7 @@ export const CardInfo = styled.section`
 `;
 
 export const BarGraph = styled.div`
-  background-color: var(--light-blue);
+  background-color: ${props => props.theme.colors.lightBlue};
   border-radius: 10px;
   position: relative;
   margin: 0.5rem 0;
@@ -204,7 +180,7 @@ export const BarGraph = styled.div`
   width: 100%;
 
   div {
-    background-color: var(--dark-blue);
+    background-color: ${props => props.theme.colors.darkBlue};
     border-radius: 10px;
     position: absolute;
     height: 100%;
