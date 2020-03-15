@@ -3,6 +3,7 @@ export const theme = {
     white: '#f3f3ff',
     lightBlue: '#b4d9ff',
     darkBlue: '#5452F6',
+    danger: '#f64c75',
     whiteGradient:
       'linear-gradient(13.09deg, #FAFAFF 12.05%, rgba(255, 255, 255, 0) 1045.02%)'
   },

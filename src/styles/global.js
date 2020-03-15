@@ -99,7 +99,7 @@ export default createGlobalStyle`
   }
 
   p,
-  address {
+  address, label {
     font-size: 13px;
     font-weight: 300;
     font-style: normal;
