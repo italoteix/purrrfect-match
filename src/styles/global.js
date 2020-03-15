@@ -51,13 +51,6 @@ export default createGlobalStyle`
     overflow-x: hidden;
   }
 
-  #root {
-    --white: #f3f3ff;
-    --light-blue: #b4d9ff;
-    --dark-blue: #5452F6;
-    --white-gradient: linear-gradient(13.09deg, #FAFAFF 12.05%, rgba(255, 255, 255, 0) 1045.02%);
-  }
-
   body {
     background: linear-gradient(347.71deg, #5452F6 12.93%, rgba(84, 82, 246, 0) 241.45%);
     -webkit-font-smoothing: antialiased !important;
@@ -79,5 +72,41 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  /* Typography */
+
+  h1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 29px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 29px;
+  }
+
+  h3 {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 19px;
+  }
+
+  p,
+  address, label {
+    font-size: 13px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 13px;
+  }
+
+  strong {
+    font-weight: bold;
   }
 `;

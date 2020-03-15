@@ -8,11 +8,10 @@ export const StyledBurger = styled.button`
   position: absolute;
   top: 2.2rem;
   right: 1rem;
-  width: 2rem;
-  height: 2rem;
+  width: ${props => props.theme.sizes.lg};
+  height: ${props => props.theme.sizes.lg};
   background: transparent;
   border: none;
-  cursor: pointer;
   padding: 0;
   z-index: 10;
 
@@ -21,9 +20,10 @@ export const StyledBurger = styled.button`
   }
 
   div {
-    width: 2rem;
+    width: ${props => props.theme.sizes.lg};
     height: 0.25rem;
-    background: ${({ open }) => (open ? 'var(--dark-blue)' : 'var(--white)')};
+    background: ${({ open, theme }) =>
+      open ? theme.colors.darkBlue : theme.colors.white};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;

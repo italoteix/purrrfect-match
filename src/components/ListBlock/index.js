@@ -1,26 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Container, CatBlock } from './styles';
+import { Bio, CatImg, Container, CatBlock, Info, PostBlock } from './styles';
 import { ReactComponent as Icon } from '../../assets/icons/chevron-right.svg';
 
 function CatFeed({ post }) {
   return (
-    <div className="cat-feed">
+    <PostBlock>
       <a href={post.url}>{post.title}</a>
       <Icon alt="arrow pointing right" />
-    </div>
+    </PostBlock>
   );
 }
 
 function CatList({ cat }) {
   return (
-    <Link className="cat-list" to={`cat/${cat.id}`}>
+    <Link to={`cat/${cat.id}`}>
       <CatBlock>
-        <img src={cat.imgURL} alt="cat avatar" />
-        <div>
+        <CatImg>
+          <img src={cat.imgURL} alt="cat avatar" />
+        </CatImg>
+        <Info>
           <h3>{cat.name}</h3>
-          <div>
+          <Bio>
             <p>
               <strong>Age: </strong>
               {cat.age}
@@ -33,8 +35,8 @@ function CatList({ cat }) {
               <strong>Pet peave: </strong>
               {cat.peave}
             </p>
-          </div>
-        </div>
+          </Bio>
+        </Info>
       </CatBlock>
     </Link>
   );

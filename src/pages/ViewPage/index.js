@@ -4,6 +4,7 @@ import { Container, CardInfo, BarGraph, ProfilePic } from './styles';
 import logotype from '../../assets/images/logotype.png';
 import api from '../../services/api';
 
+import Header from '../../components/Header';
 import PieChart from '../../components/PieChart';
 import CardSwiper from '../../components/CardSwiper';
 
@@ -47,9 +48,7 @@ class ViewPage extends React.Component {
 
     return (
       <Container>
-        <header>
-          <img src={logotype} alt="purrrfect match logo" />
-        </header>
+        <Header img={logotype} imgAlt="logo" />
         <main>
           <ProfilePic>
             <img className="profile" src={cat.imgURL} alt="cat avatar" />

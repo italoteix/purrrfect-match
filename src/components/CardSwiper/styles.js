@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const Container = styled.article`
   display: flex;
   overflow-x: auto;
-  margin: 0 -1rem;
+  margin: 0 -${props => props.theme.sizes.md};
 
   a {
-    border-radius: 5px;
-    margin-left: 1rem;
+    border-radius: ${props => props.theme.radius};
+    margin-left: ${props => props.theme.sizes.md};
     min-width: 60%;
     overflow: hidden;
     padding-top: 60%;
@@ -16,7 +16,7 @@ export const Container = styled.article`
     /* Move last block from screen side */
     &:last-child {
       box-sizing: content-box;
-      border-right: 1rem solid transparent;
+      border-right: ${props => props.theme.sizes.md} solid transparent;
     }
   }
 
@@ -30,7 +30,7 @@ export const Container = styled.article`
 
     /* To keep border radius when last 'a' has right border */
     &:last-child {
-      border-radius: 5px;
+      border-radius: ${props => props.theme.radius};
     }
   }
 
