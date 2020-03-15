@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import breakpoints from '../../styles/breakpoints';
+
 export const Container = styled.header`
   display: flex;
   align-self: center;
@@ -16,7 +18,7 @@ export const Container = styled.header`
     max-width: 100%;
   }
 
-  @media (min-width: 768px) {
+  @media ${breakpoints.tablet} {
     margin: 0;
     padding: 0;
     align-self: flex-start;

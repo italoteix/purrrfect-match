@@ -6,10 +6,12 @@ import logo from '../../assets/images/logo.png';
 import logotype from '../../assets/images/logotype.png';
 import { ReactComponent as PlusIcon } from '../../assets/icons/circle-plus.svg';
 import api from '../../services/api';
+import breakpoints from '../../styles/breakpoints';
 
 import BurgerMenu from '../../components/BurgerMenu';
-import ListBlock from '../../components/ListBlock';
+import { CatFeed, CatList } from '../../components/ListBlock';
 import SearchField from '../../components/SearchField';
+import PawLoading from '../../components/PawLoading';
 
 class SimpleList extends React.Component {
   constructor(props) {
@@ -45,10 +47,10 @@ class SimpleList extends React.Component {
     this.mediaQueryList.removeListener(this.handler);
   }
 
-  mediaQueryList = window.matchMedia('(min-width: 768px)');
+  mediaQueryList = window.matchMedia(breakpoints.tablet);
 
-  handler = e => {
-    this.setState({ ...this.state, matches: e.matches });
+  handler = event => {
+    this.setState({ ...this.state, matches: event.matches });
   };
 
   setIsCatlist = value => {
@@ -67,14 +69,18 @@ class SimpleList extends React.Component {
   render() {
     const { isCatList, filteredCatList, blogPosts, matches } = this.state;
 
+    if (this.state.catList.length === 0) {
+      return <PawLoading />;
+    }
+
     return (
       <Container>
         <Header>
           <picture>
-            <source srcSet={logotype} media="(min-width: 768px)" />
+            <source srcSet={logotype} media={breakpoints.tablet} />
             <img src={logo} alt="purrrfect match logo" />
           </picture>
-          <SearchField searchChange={this.onSearchChange} />
+          <SearchField onSearch={this.onSearchChange} />
           {matches && (
             <Link to="/cats/submit" role="button" aria-label="add a new cat">
               <PlusIcon focusable="false" aria-hidden="true" />
@@ -89,12 +95,8 @@ class SimpleList extends React.Component {
           )}
         </Header>
         <main>
-          {(matches || !isCatList) && (
-            <ListBlock data={blogPosts} isCatList={false} />
-          )}
-          {(matches || isCatList) && (
-            <ListBlock data={filteredCatList} isCatList={true} />
-          )}
+          {(matches || !isCatList) && <CatFeed posts={blogPosts} />}
+          {(matches || isCatList) && <CatList cats={filteredCatList} />}
         </main>
       </Container>
     );

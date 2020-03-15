@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import breakpoints from '../../styles/breakpoints';
+
 export const Search = styled.form`
   display: flex;
   flex: 1;
@@ -20,7 +22,7 @@ export const Search = styled.form`
     flex: 1;
   }
 
-  @media (min-width: 768px) {
+  @media ${breakpoints.tablet} {
     max-width: 316px;
     margin-left: auto;
   }

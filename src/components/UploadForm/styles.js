@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import breakpoints from '../../styles/breakpoints';
+
 export const Container = styled.form`
   flex: 1;
   display: flex;
@@ -23,7 +25,7 @@ export const Container = styled.form`
     border: none;
   }
 
-  @media (min-width: 768px) {
+  @media ${breakpoints.tablet} {
     fieldset {
       margin-bottom: 1rem;
     }

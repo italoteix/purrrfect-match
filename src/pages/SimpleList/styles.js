@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import breakpoints from '../../styles/breakpoints';
+
 export const Container = styled.div`
   display: flex;
   flex: 1;
@@ -17,7 +19,7 @@ export const Container = styled.div`
     width: 100%;
     overflow: auto;
   }
-  @media (min-width: 768px) {
+  @media ${breakpoints.tablet} {
     padding: 3.5rem;
   }
 `;
@@ -52,7 +54,7 @@ export const Header = styled.header`
     }
   }
 
-  @media (min-width: 768px) {
+  @media ${breakpoints.tablet} {
     img {
       padding: 0;
     }

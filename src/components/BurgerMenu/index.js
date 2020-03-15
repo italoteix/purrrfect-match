@@ -27,19 +27,22 @@ class BurgerMenu extends React.Component {
     this.handler(event);
   };
 
-  setOpen = () => {
+  toggleOpen = () => {
     this.setState({ open: !this.state.open });
   };
 
   render() {
+    const { open } = this.state;
+    const { isCatList, setIsCatlist } = this.props;
+
     return (
       <div ref={this.node}>
-        <Burger open={this.state.open} setOpen={() => this.setOpen()} />
+        <Burger open={open} onClick={() => this.toggleOpen()} />
         <Menu
-          open={this.state.open}
-          setOpen={() => this.setOpen()}
-          isCatList={this.props.isCatList}
-          setBlock={this.props.setIsCatlist}
+          open={open}
+          setOpen={() => this.toggleOpen()}
+          isCatList={isCatList}
+          setBlock={setIsCatlist}
         />
       </div>
     );

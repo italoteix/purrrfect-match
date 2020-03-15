@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import breakpoints from '../../styles/breakpoints';
+
 export const Container = styled.article`
   display: flex;
   overflow-x: auto;
@@ -34,14 +36,14 @@ export const Container = styled.article`
     }
   }
 
-  @media (min-width: 640px) {
+  @media ${breakpoints.phablet} {
     a {
       min-width: 40%;
       padding-top: 40%;
     }
   }
 
-  @media (min-width: 768px) {
+  @media ${breakpoints.tablet} {
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 0;
