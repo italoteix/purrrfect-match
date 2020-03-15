@@ -7,6 +7,7 @@ import api from '../../services/api';
 import Header from '../../components/Header';
 import PieChart from '../../components/PieChart';
 import CardSwiper from '../../components/CardSwiper';
+import PawLoading from '../../components/PawLoading';
 
 class ViewPage extends React.Component {
   constructor(props) {
@@ -45,6 +46,10 @@ class ViewPage extends React.Component {
 
   render() {
     const { cat, relatedCats } = this.state;
+
+    if (this.state.relatedCats.length === 0) {
+      return <PawLoading />;
+    }
 
     return (
       <Container>

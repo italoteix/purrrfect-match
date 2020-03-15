@@ -10,6 +10,7 @@ import api from '../../services/api';
 import BurgerMenu from '../../components/BurgerMenu';
 import ListBlock from '../../components/ListBlock';
 import SearchField from '../../components/SearchField';
+import PawLoading from '../../components/PawLoading';
 
 class SimpleList extends React.Component {
   constructor(props) {
@@ -66,6 +67,10 @@ class SimpleList extends React.Component {
 
   render() {
     const { isCatList, filteredCatList, blogPosts, matches } = this.state;
+
+    if (this.state.catList.length === 0) {
+      return <PawLoading />;
+    }
 
     return (
       <Container>
