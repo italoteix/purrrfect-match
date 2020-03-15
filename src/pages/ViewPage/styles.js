@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import breakpoints from '../../styles/breakpoints';
+
 export const Container = styled.div`
   display: flex;
   flex: 1;
@@ -17,7 +19,7 @@ export const Container = styled.div`
     margin: 1.5rem 0;
   }
 
-  @media (min-width: 768px) {
+  @media ${breakpoints.tablet} {
     padding: 2.5rem;
 
     main {
@@ -26,7 +28,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 1024px) {
+  @media ${breakpoints.laptop} {
     padding: 2rem 3.5rem;
   }
 `;
@@ -53,7 +55,7 @@ export const ProfilePic = styled.div`
     transform: translateX(-50%);
   }
 
-  @media (min-width: 768px) {
+  @media ${breakpoints.tablet} {
     border-radius: 10px;
     padding: 0;
     flex: 2;
@@ -61,7 +63,7 @@ export const ProfilePic = styled.div`
     height: 300px;
   }
 
-  @media (min-width: 1024px) {
+  @media ${breakpoints.laptop} {
     height: unset;
   }
 `;
@@ -106,7 +108,7 @@ export const CardInfo = styled.section`
     margin-top: 1rem;
   }
 
-  @media (min-width: 768px) {
+  @media ${breakpoints.tablet} {
     border-radius: ${props => props.theme.radius};
     flex: 3;
     margin-left: 1rem;
