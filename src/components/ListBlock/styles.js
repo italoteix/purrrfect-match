@@ -131,3 +131,8 @@ export const Bio = styled.div`
     }
   }
 `;
+
+export const EmptyList = styled.p`
+  font-weight: bold;
+  padding: 1.5rem;
+`;
