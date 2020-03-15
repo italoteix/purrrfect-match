@@ -79,7 +79,7 @@ class SimpleList extends React.Component {
             <source srcSet={logotype} media="(min-width: 768px)" />
             <img src={logo} alt="purrrfect match logo" />
           </picture>
-          <SearchField searchChange={this.onSearchChange} />
+          <SearchField onSearch={this.onSearchChange} />
           {matches && (
             <Link to="/cats/submit" role="button" aria-label="add a new cat">
               <PlusIcon focusable="false" aria-hidden="true" />
