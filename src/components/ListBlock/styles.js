@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import breakpoints from '../../styles/breakpoints';
+
 export const Container = styled.section`
   flex: 1;
 
@@ -35,7 +37,7 @@ export const Container = styled.section`
     color: ${props => props.theme.colors.darkBlue};
   }
 
-  @media (min-width: 768px) {
+  @media ${breakpoints.tablet} {
     &:last-of-type {
       flex: 3;
       margin-left: 1.75rem;
@@ -93,11 +95,11 @@ export const CatImg = styled.div`
 `;
 
 export const Info = styled.div`
-  @media (min-width: 400px) {
+  @media ${breakpoints.phone} {
     margin-left: 20%;
   }
 
-  @media (min-width: 640px) {
+  @media ${breakpoints.phablet} {
     margin: 0;
     display: flex;
     justify-content: space-between;
@@ -114,7 +116,7 @@ export const Info = styled.div`
 export const Bio = styled.div`
   flex: 1;
 
-  @media (min-width: 1024px) {
+  @media ${breakpoints.laptop} {
     flex: 3;
     display: flex;
 
@@ -128,4 +130,9 @@ export const Bio = styled.div`
       margin-right: 1rem;
     }
   }
+`;
+
+export const EmptyList = styled.p`
+  font-weight: bold;
+  padding: 1.5rem;
 `;

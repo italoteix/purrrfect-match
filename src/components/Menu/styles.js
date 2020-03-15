@@ -8,7 +8,7 @@ export const StyledMenu = styled.nav`
   height: 100vh;
   width: 100%;
   text-align: left;
-  padding: 2rem;
+  padding: 50% 2rem;
   position: absolute;
   top: 0;
   right: 0;
@@ -22,7 +22,11 @@ export const StyledMenu = styled.nav`
 
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(200%)')};
 
-  button {
+  button,
+  a {
+    background-color: orange;
+    flex: 1;
+
     font-size: 20px;
     text-transform: uppercase;
     padding: 2rem 0;
@@ -45,6 +49,14 @@ export const StyledMenu = styled.nav`
       &:hover {
         opacity: 0.7;
       }
+    }
+  }
+
+  a {
+    margin-left: auto;
+
+    button {
+      padding: 0;
     }
   }
 `;

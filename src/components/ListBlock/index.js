@@ -1,10 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Bio, CatImg, Container, CatBlock, Info, PostBlock } from './styles';
+import {
+  Bio,
+  CatImg,
+  Container,
+  CatBlock,
+  EmptyList,
+  Info,
+  PostBlock
+} from './styles';
 import { ReactComponent as Icon } from '../../assets/icons/chevron-right.svg';
 
-function CatFeed({ post }) {
+function CatFeedItem({ post }) {
   return (
     <PostBlock>
       <a href={post.url}>{post.title}</a>
@@ -13,7 +21,16 @@ function CatFeed({ post }) {
   );
 }
 
-function CatList({ cat }) {
+function CatAttribute({ label, text }) {
+  return (
+    <p>
+      <strong>{`${label} `}</strong>
+      {text}
+    </p>
+  );
+}
+
+function CatListItem({ cat }) {
   return (
     <Link to={`cat/${cat.id}`}>
       <CatBlock>
@@ -23,18 +40,9 @@ function CatList({ cat }) {
         <Info>
           <h3>{cat.name}</h3>
           <Bio>
-            <p>
-              <strong>Age: </strong>
-              {cat.age}
-            </p>
-            <p>
-              <strong>Favorite activity: </strong>
-              {cat.fav}
-            </p>
-            <p>
-              <strong>Pet peave: </strong>
-              {cat.peave}
-            </p>
+            <CatAttribute label="Age:" text={cat.age} />
+            <CatAttribute label="Favorite activity:" text={cat.age} />
+            <CatAttribute label="Pet peave:" text={cat.peave} />
           </Bio>
         </Info>
       </CatBlock>
@@ -42,15 +50,50 @@ function CatList({ cat }) {
   );
 }
 
-function ListBlock({ data, isCatList }) {
+export function CatList({ cats }) {
+  if (cats.length <= 0) {
+    return (
+      <Container>
+        <div>
+          <h1>Cat List</h1>
+        </div>
+        <EmptyList>We couldn't find any cats for this search.</EmptyList>
+      </Container>
+    );
+  }
+
   return (
     <Container>
-      <div>{isCatList ? <h1>Cat List</h1> : <h3>Cat feed</h3>}</div>
-      {isCatList
-        ? data.map(item => <CatList cat={item} key={item.id} />)
-        : data.map(item => <CatFeed post={item} key={item.id} />)}
+      <div>
+        <h1>Cat List</h1>
+      </div>
+      {cats.map(cat => (
+        <CatListItem cat={cat} key={cat.id} />
+      ))}
     </Container>
   );
 }
 
-export default ListBlock;
+export function CatFeed({ posts }) {
+  if (posts.length <= 0) {
+    return (
+      <Container>
+        <div>
+          <h1>Cat List</h1>
+        </div>
+        <EmptyList>There are no posts at the moment.</EmptyList>
+      </Container>
+    );
+  }
+
+  return (
+    <Container>
+      <div>
+        <h3>Cat feed</h3>
+      </div>
+      {posts.map(post => (
+        <CatFeedItem post={post} key={post.id} />
+      ))}
+    </Container>
+  );
+}

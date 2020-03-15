@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import breakpoints from '../../styles/breakpoints';
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column-reverse;
@@ -26,7 +28,7 @@ export const Container = styled.div`
     max-width: 150px;
   }
 
-  @media (min-width: 640px) {
+  @media ${breakpoints.phablet} {
     flex-direction: row;
 
     & > div:first-child {
@@ -52,7 +54,7 @@ export const Label = styled.div`
     background-color: ${props => props.labelColor};
   }
 
-  @media (min-width: 640px) {
+  @media ${breakpoints.phablet} {
     margin: 0;
   }
 `;

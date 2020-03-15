@@ -31,7 +31,7 @@ export const FileLabel = styled.span`
   align-items: center;
 `;
 
-export const AddButtom = styled.button`
+export const AddButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;

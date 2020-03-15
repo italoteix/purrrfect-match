@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import breakpoints from '../../styles/breakpoints';
+
 export const Container = styled.div`
   display: flex;
   flex: 1;
@@ -16,7 +18,7 @@ export const Container = styled.div`
     display: none;
   }
 
-  @media (min-width: 768px) {
+  @media ${breakpoints.tablet} {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 44px 1fr;
