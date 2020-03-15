@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { StyledMenu } from './styles';
 
 function Menu(props) {
@@ -24,7 +26,9 @@ function Menu(props) {
       >
         Cat list
       </button>
-      <button href="/">Add new cat</button>
+      <Link to="/cats/submit">
+        <button>Add new cat</button>
+      </Link>
     </StyledMenu>
   );
 }
