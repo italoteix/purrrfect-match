@@ -12,9 +12,9 @@ class FileInput extends React.Component {
     };
   }
 
-  handleChange = e => {
-    // console.log(e.target.files[0].name);
-    this.setState({ fileName: e.target.files[0].name });
+  handleChange = event => {
+    const fileName = event.target.files[0].name;
+    this.setState({ fileName });
   };
 
   render() {
